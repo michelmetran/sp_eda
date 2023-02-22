@@ -1,28 +1,50 @@
-import os
+"""
+Pastas do Projeto
+nov.22
+"""
 
 
-data_path = os.path.join('..', 'data')
-os.makedirs(data_path, exist_ok=True)
+from pathlib import Path
 
-input_path = os.path.join(data_path, 'input')
-os.makedirs(input_path, exist_ok=True)
+project_path = Path(__file__).parents[1]
 
-input_path_tab = os.path.join(input_path, 'tabs')
-os.makedirs(input_path_tab, exist_ok=True)
+# Data
+data_path = project_path / 'data'
+data_path.mkdir(exist_ok=True)
 
+# Input
+input_path = data_path / 'input'
+input_path.mkdir(exist_ok=True)
 
+input_path_tab = input_path / 'tab'
+input_path_tab.mkdir(exist_ok=True)
 
+# Output
+output_path = data_path / 'output'
+output_path.mkdir(exist_ok=True)
 
-output_path = os.path.join(data_path, 'output')
-os.makedirs(output_path, exist_ok=True)
+output_path_tabs = output_path / 'tabs'
+output_path_tabs.mkdir(exist_ok=True)
 
-output_path_tabs = os.path.join(output_path, 'tabs')
-os.makedirs(output_path_tabs, exist_ok=True)
+output_path_geo = output_path / 'geo'
+output_path_geo.mkdir(exist_ok=True)
 
-output_path_geo = os.path.join(output_path, 'geo')
-os.makedirs(output_path_geo, exist_ok=True)
+output_path_maps = output_path / 'maps'
+output_path_maps.mkdir(exist_ok=True)
 
-output_path_maps = os.path.join(output_path, 'maps')
-os.makedirs(output_path_maps, exist_ok=True)
+# Scrapy
+# scrapy_path = project_path / 'scrapy'
+# scrapy_path.mkdir(exist_ok=True)
 
+# logs_path = scrapy_path / 'logs'
+# logs_path.mkdir(exist_ok=True)
 
+# adds_path = scrapy_path / 'adds'
+# adds_path.mkdir(exist_ok=True)
+
+# driver_path = scrapy_path / 'driver'
+# driver_path.mkdir(exist_ok=True)
+
+if __name__ == '__main__':
+    print(project_path)
+    
